@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping auto-import="false">
+	<class name="org.jpenguin.datatypes.Image">
+		<cache usage="read-write"/>
+        <id name="id">
+            <generator class="native"/>
+        </id>
+       <!-- 300MB, longer than  16777215 to force MySQL use BLOB -->
+        <property name="data" type="binary" length="300000000"/>  
+	</class>
+</hibernate-mapping>
