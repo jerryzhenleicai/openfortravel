@@ -7,7 +7,14 @@ OpenForTravel contains source code of the Gaocan.com's train route search code t
 
 # 编译和安装 (Installation)
 
-运行 (Run)：
+## 准备时刻表价格表文件 (Prepare the Schedule Data)
+
+``` mkdir /var/opt/traindata ```
+``` cp train_schedule_data/*.gz  /var/opt/traindata ```
+``` cd  /var/opt/traindata; gunzip *.gz ```
+
+
+## 编译 (Build)：
 
 用Apache Maven来编译:
 
@@ -18,7 +25,7 @@ OpenForTravel contains source code of the Gaocan.com's train route search code t
 This will create a WAR file under ./rest-server/target/rest-server-1.0.war, which can be deployed to any Java servlet
 container. We will use Apache Tomcat 8.5.9 as an example.
 
-运行 (Run)：
+## 运行 (Run)：
 
 ```cp ./rest-server/target/rest-server-1.0.war  /opt/apache-tomcat-8.5.9/webapps/rest.war```
 
