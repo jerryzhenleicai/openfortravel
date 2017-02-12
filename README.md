@@ -10,7 +10,9 @@ OpenForTravel contains source code of the Gaocan.com's train route search code t
 ## 准备时刻表价格表文件 (Prepare the Schedule Data)
 
 ``` mkdir /var/opt/traindata ```
+
 ``` cp train_schedule_data/*.gz  /var/opt/traindata ```
+
 ``` cd  /var/opt/traindata; gunzip *.gz ```
 
 
