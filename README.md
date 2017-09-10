@@ -62,6 +62,6 @@ MIT License. See LICENSE.md
 
 蔡杰瑞 Jerry Cai
 
-http://www.caijerry.com/
+http://www.gaocan.com/
 
-jerrycai@gaocan.com
+zcai@gaocan.com

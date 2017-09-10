@@ -9,6 +9,7 @@ import com.gaocan.train.schedule.FullCityNameSources;
 import com.gaocan.train.train.TrainTrip;
 import com.google.gson.Gson;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -129,6 +130,7 @@ public class RestServer extends HttpServlet {
       searchReq.setLatestArriveHour(Integer.parseInt(req.getParameter("de")));
     }
 
+
     String sortBy = req.getParameter("sortBy");
     if (sortBy != null) {
       if ("P".equalsIgnoreCase(sortBy)) {
@@ -147,12 +149,19 @@ public class RestServer extends HttpServlet {
     pw.close();
   }
 
+
+  @Override
+  public void init(ServletConfig config) throws ServletException {
+    super.init(config);
+
+  }
+
   private String doRouteSearchByRequest(TrainSearchRequest req) {
     try {
       List<TrainTrip> rides = rfp.get().findTrainRidesBetweenCityPair(req);
       StringBuffer sb = new StringBuffer(10000);
       sb.append("[");
-      HourMinTime dep = null, arriv = null;
+      HourMinTime dep , arriv ;
       Gson gson = new Gson();
       for (int r = 0; r < rides.size(); r++) {
         TrainTrip ride = rides.get(r);

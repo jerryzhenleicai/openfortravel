@@ -340,7 +340,7 @@ public abstract class Schedule {
      *            full or partial number that can identify the line
      * @return the first line matches the number, null if not found
      */
-    public Line getLineMatchNumber(String number) {
+    public Line   getLineMatchNumber(String number) {
         for (Line l : getLines()) {
             if (l.matchNumber(number)) {
                 return l;

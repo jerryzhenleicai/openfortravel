@@ -15,4 +15,7 @@ public interface ITrainRouteFinder {
     public Schedule getSchedule();
     public TrainPriceImporter getTrainPricer();
 
+
+
+                  
 }
